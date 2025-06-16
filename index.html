@@ -96,21 +96,23 @@
         <div class="max-w-7xl mx-auto px-4">
             <h3 class="text-3xl font-semibold">About Me</h3>
             <p class="mt-4 text-lg">I’m currently pursuing B.Tech in Information Technology at Medi-Caps University,
-                Indore (2022–2026). I specialize in the MERN stack and love building modern web apps. Passionate about
-                clean code and real-world problem solving.</p>
-            <p class="mt-4">Location: Indore, Madhya Pradesh</p>
+                Indore (2022–2026).
+
+                Though I’m still exploring full-stack technologies, I’m most confident with frontend development and
+                gradually gaining experience with Node.js and MongoDB for backend needs.
+            </p>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section id="skills" class="py-24">
         <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-3xl font-semibold">Skills</h3>
+            <h3 class="text-3xl font-semibolddark:text-white">Skills</h3>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
                 <!-- Frontend -->
                 <div>
-                    <h4 class="text-xl font-medium mb-4">Frontend</h4>
+                    <h4 class="text-xl font-medium mb-4 dark:text-white">Frontend</h4>
                     <div class="flex flex-wrap gap-3">
                         <span
                             class="px-3 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition">HTML</span>
@@ -128,7 +130,7 @@
 
                 <!-- Backend -->
                 <div>
-                    <h4 class="text-xl font-medium mb-4">Backend</h4>
+                    <h4 class="text-xl font-medium mb-4 dark:text-white">Backend</h4>
                     <div class="flex flex-wrap gap-3">
                         <span
                             class="px-3 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition">Node.js</span>
@@ -143,7 +145,7 @@
 
                 <!-- Other -->
                 <div>
-                    <h4 class="text-xl font-medium mb-4">Other</h4>
+                    <h4 class="text-xl font-medium mb-4 dark:text-white">Other</h4>
                     <div class="flex flex-wrap gap-3">
                         <span
                             class="px-3 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition">Git</span>
@@ -254,8 +256,8 @@
     <!-- Achievements Section -->
     <section id="achievements" class="py-24">
         <div class="max-w-7xl mx-auto px-4">
-            <h3 class="text-3xl font-semibold">Achievements</h3>
-            <ul class="list-disc pl-6 mt-6">
+            <h3 class="text-3xl font-semibold dark:text-white">Achievements</h3>
+            <ul class="list-disc pl-6 mt-6 dark:text-white">
                 <li>C language training </li>
                 <li>Python training </li>
                 <li>Java – Online course</li>
@@ -279,7 +281,7 @@
         <div class="max-w-7xl mx-auto text-center">
             <div class="space-x-6 mt-4">
                 <a href="https://github.com/Sumit09121" class="">GitHub</a>
-                <a href="https://linkedin.com/in/sumit-lakhera" class="">LinkedIn</a>
+                <a href="www.linkedin.com/in/sumit-lakhera-933808249" class="">LinkedIn</a>
             </div>
         </div>
     </footer>
@@ -299,48 +301,48 @@
 
         // for media slider in projects photos and videos
         // 👇 Automatically detect all sliders on page load
-  const sliders = {};
+        const sliders = {};
 
-  window.onload = () => {
-    // 🚀 Find all slider wrappers having IDs like: slider-projectname
-    document.querySelectorAll("[id^='slider-']").forEach(sliderDiv => {
-      const id = sliderDiv.id.replace("slider-", ""); // e.g. "slider-netflix" => "netflix"
-      const slides = sliderDiv.querySelectorAll("img");
+        window.onload = () => {
+            // 🚀 Find all slider wrappers having IDs like: slider-projectname
+            document.querySelectorAll("[id^='slider-']").forEach(sliderDiv => {
+                const id = sliderDiv.id.replace("slider-", ""); // e.g. "slider-netflix" => "netflix"
+                const slides = sliderDiv.querySelectorAll("img");
 
-      // 🗃️ Initialize the slider object
-      sliders[id] = {
-        index: 0,
-        slides: slides,
-      };
+                // 🗃️ Initialize the slider object
+                sliders[id] = {
+                    index: 0,
+                    slides: slides,
+                };
 
-      // ✅ Show first slide for each
-      showSlide(id, 0);
-    });
-  };
+                // ✅ Show first slide for each
+                showSlide(id, 0);
+            });
+        };
 
-  // 🔁 Function to show the slide based on index
-  function showSlide(sliderId, index) {
-    const slider = document.getElementById(`slider-${sliderId}`);
-    const { slides } = sliders[sliderId];
-    if (!slider) return;
+        // 🔁 Function to show the slide based on index
+        function showSlide(sliderId, index) {
+            const slider = document.getElementById(`slider-${sliderId}`);
+            const { slides } = sliders[sliderId];
+            if (!slider) return;
 
-    const offset = index * -100;
-    slider.style.transform = `translateX(${offset}%)`;
-  }
+            const offset = index * -100;
+            slider.style.transform = `translateX(${offset}%)`;
+        }
 
-  // ➡️ Show next image
-  function nextSlide(sliderId) {
-    const slider = sliders[sliderId];
-    slider.index = (slider.index + 1) % slider.slides.length;
-    showSlide(sliderId, slider.index);
-  }
+        // ➡️ Show next image
+        function nextSlide(sliderId) {
+            const slider = sliders[sliderId];
+            slider.index = (slider.index + 1) % slider.slides.length;
+            showSlide(sliderId, slider.index);
+        }
 
-  // ⬅️ Show previous image
-  function prevSlide(sliderId) {
-    const slider = sliders[sliderId];
-    slider.index = (slider.index - 1 + slider.slides.length) % slider.slides.length;
-    showSlide(sliderId, slider.index);
-  }
+        // ⬅️ Show previous image
+        function prevSlide(sliderId) {
+            const slider = sliders[sliderId];
+            slider.index = (slider.index - 1 + slider.slides.length) % slider.slides.length;
+            showSlide(sliderId, slider.index);
+        }
 
     </script>
 </body>
